@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>토끼를 잡아라</title>
+
+    <style type="text/css">
+        body, h1 { margin: 0; padding: 0}
+        body {background-image: url('grass.jpeg');
+    			background-size: cover;
+    			background-repeat: no-repeat;
+    			background-attachment: fixed;
+    		}
+        h1 { text-align: center; padding-top: 30px; padding-bottom: 30px; background: lightpink; }
+        .box { width: 150px; height: 150px; position: absolute; }
+        img { display: block; width: 100%;}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🐰 토끼를 잡아라 🐰</h1>
+        <img id="rabbit" class="box" src="rabbit.png">
+        <script type="text/javascript">
+
+            var rabbit = document.getElementById("rabbit");
+            var backgroundWidth = window.innerWidth;
+            var backgroundHeight = window.innerHeight;
+
+            rabbit.style.left = Math.random() * (backgroundWidth - 150) + "px";
+            rabbit.style.top = Math.random() * (backgroundHeight - 150) + "px";
+            
+            rabbit.onclick = function() {
+                var b = Math.random() * (backgroundWidth - 150);
+                var c = Math.random() * (backgroundHeight - 150);
+
+                rabbit.style.left = b + "px";
+                rabbit.style.top = c + "px";
+            }
+            console.log(window.innerWidth, window.innerHeight);
+        </script>
+    </header>
+</body>
+</html>
